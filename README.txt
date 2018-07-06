@@ -26,7 +26,7 @@ $ python
 >>> exit()
 $
 
-Example 3: (a+b) and (a+b)mod N (all for 100 iterations)
+Example 3: adder(a+b) and (a+b)mod N (all for 100 iterations)
 $ python
 >>> from adder import *
 >>> 

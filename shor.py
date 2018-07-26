@@ -774,7 +774,21 @@ def sh(g):
     qc.cx(qr[10], qr[11])
 
     qc.h(qr[11])
+    ################################
+    #qft-1 em 0 e 1
 
+    qc.swap(qr[0], qr[1])
+
+    qc.h(qr[0])
+
+    qc.u1(-pi/4, qr[1])
+    qc.cx(qr[0], qr[1])
+    qc.u1(-pi/4, qr[0])
+    qc.u1(pi/4, qr[1])
+    qc.cx(qr[0], qr[1])
+
+    qc.h(qr[1])
+    
     qc.measure(qr, cr)
     result = Q_program.execute(["superposition"], backend='local_qasm_simulator', shots=g)
     print(result)
